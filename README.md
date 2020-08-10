@@ -24,8 +24,8 @@ The api would determine if 2 cities are connected.
  If originCity and destinationCity are connected via a path, the output would be ```YES```   
  If either of the parameter is not present or the cities are not connected, the output would be ```NO```   
    
- <b> Algorith used for connections </b>   
- This is a typical problem of finding a path in a connected graph. The algorith used here is <I>Breadth First Search</I>
+ <b> Algorithm used for connections </b>   
+ This is a typical problem of finding a path in a connected graph. The algorithm used here is <I>Breadth First Search.</I>
  We construct the graph using the cities files provided during application startup. The code is present in <I>Graph.java</I> and then use BFS to check if the two given cities are connected.  
    
  <b>Future enhancements</b>  
