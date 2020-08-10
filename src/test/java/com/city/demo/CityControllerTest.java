@@ -2,11 +2,14 @@ package com.city.demo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
+@RunWith(JUnitPlatform.class)
 public class CityControllerTest {
 
 	@InjectMocks

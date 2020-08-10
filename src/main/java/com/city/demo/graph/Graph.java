@@ -1,8 +1,12 @@
 package com.city.demo.graph;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -32,8 +36,7 @@ public class Graph {
 		BufferedReader reader = null;
 		String line = null;
 		try {
-			String fileName = properties.getCityFile();
-			reader = new BufferedReader(new FileReader(fileName));
+			reader = getReader();
 			while ((line = reader.readLine()) != null) {
 				String[] arr = line.split(",");
 				String origin = StringUtils.trimWhitespace(arr[0]).toLowerCase();
@@ -53,6 +56,20 @@ public class Graph {
 				}
 			}
 		}
+	}
+
+	private BufferedReader getReader() throws FileNotFoundException, UnsupportedEncodingException {
+		BufferedReader reader;
+		String fileName = properties.getCityFile();
+		if (StringUtils.hasText(fileName)) {
+			// Filename is present. Use this
+			reader = new BufferedReader(new FileReader(fileName));
+		} else {
+			// Fallback to default file
+			InputStream is = this.getClass().getClassLoader().getResourceAsStream("city.txt");
+			reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+		}
+		return reader;
 	}
 
 	public int getVertices() {

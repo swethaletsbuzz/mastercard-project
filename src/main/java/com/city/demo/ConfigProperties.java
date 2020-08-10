@@ -6,10 +6,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties
 public class ConfigProperties {
 
-	@Value("${cities.file}")
+	@Value("${cities.file:}")
 	private String cityFile;
 
 	public String getCityFile() {
+		System.out.println("CITIES FILE: " + cityFile);
 		return cityFile;
 	}
 
