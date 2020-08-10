@@ -16,4 +16,12 @@ The api would determine if 2 cities are connected.
 		i. Create a external property file.  
 		ii. In the property file, specify the property ```cities.file=location of connection file```   
     iii. Launch the app using: ```java -jar demo-0.0.1-SNAPSHOT.jar --spring.config.location=<property file location>```    
-	 
+    
+ <b>URL</b>
+ 
+ http://localhost:8080//connected?origin=originCity&destination=destinationCity   
+    
+ If originCity and destinationCity are connected via a path, the output would be ```YES```   
+ If either of the parameter is not present or the cities are not connected, the output would be ```NO```   
+   
+ <b> Algorith used for connections <b>
