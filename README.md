@@ -21,8 +21,8 @@ The api would determine if 2 cities are connected.
  
  http://localhost:8080//connected?origin=originCity&destination=destinationCity   
     
- If originCity and destinationCity are connected via a path, the output would be ```YES```   
- If either of the parameter is not present or the cities are not connected, the output would be ```NO```   
+ If originCity and destinationCity are connected via a path, the output would be ```yes```   
+ If either of the parameter is not present or the cities are not connected, the output would be ```no```   
    
  <b> Algorithm used for connections </b>   
  This is a typical problem of finding a path in a connected graph. The algorithm used here is <I>Breadth First Search.</I>
