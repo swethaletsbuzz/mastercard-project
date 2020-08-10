@@ -10,7 +10,6 @@ public class ConfigProperties {
 	private String cityFile;
 
 	public String getCityFile() {
-		System.out.println("CITIES FILE: " + cityFile);
 		return cityFile;
 	}
 

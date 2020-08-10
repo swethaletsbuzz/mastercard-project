@@ -20,12 +20,8 @@ public class CityController {
 		}
 		Boolean result = service.getCityConnections(StringUtils.trimWhitespace(origin),
 				StringUtils.trimWhitespace(destination));
-		if (result != null) {
-			if (result == Boolean.TRUE) {
-				return "yes";
-			} else {
-				return "no";
-			}
+		if (result != null && result == Boolean.TRUE) {
+			return "yes";
 		}
 		return "no";
 	}
